@@ -1,11 +1,11 @@
 const fs = require('fs')
 
-export const load = (filename: string):Promise<[]> => {
-	return new Promise((reject, resolve) => {
+export const load = (filename: string):Promise<string> => {
+	return new Promise((resolve, reject) => {
 		fs.readFile(filename, "utf8", (err, data:string) => {
-			resolve(data.split('\n'))
+			resolve(data)
 		})
 	})
-	
+
 
 }
